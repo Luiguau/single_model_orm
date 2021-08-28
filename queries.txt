@@ -1,0 +1,28 @@
+Consulta: Crear 3 nuevos usuarios
+	new_user = users(first_name="Jose", last_name="Ulloa", email_address="julloa@g.com", age=32)
+	new_user.save()
+	new_user = users.objects.create(first_name="Juan", last_name="Perez", email_address="jperez@g.com", age=40)
+	new_user = users.objects.create(first_name="Ana", last_name="Diaz", email_address="adiaz@g.com", age=25)
+
+Consulta: recuperar todos los usuarios
+	all_user = users.objects.all()
+
+Consulta: recuperar el último usuario
+	last_user = users.objects.last()
+
+Consulta: recuperar el primer usuario
+	first_user = users.objects.first()
+
+Consulta: Cambie el usuario con id = 3 para que su apellido sea Pancakes.
+	user_update = users.objects.get(id=3)
+	user_update.last_name = "Pancakes"
+	user_update.save()
+
+Consulta: Eliminar el usuario con id = 2 de la base de datos
+	user_delete = users.objects.get(id=2)
+	user_delete.delete()
+
+Consulta: Obtenga todos los usuarios, ordenados por su nombre
+	all_user_filtered = users.objects.all().order_by("first_name")
+
+BONUS Query: obtén todos los usuarios, ordenados por su nombre en orden descendente
