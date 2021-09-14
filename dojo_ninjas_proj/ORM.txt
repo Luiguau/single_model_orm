@@ -1,0 +1,48 @@
+# Ejecuta el shell e importe sus modelos
+python3 manage.py shell
+from dojo_ninjas_app.models import Dojo, Ninja
+
+# Consulta: Crea 3 nuevos dojos
+dojo1=Dojo.objects.create(name="Water Dojo", city="Rancagua", state="CL")
+dojo2=Dojo.objects.create(name="Fire Dojo", city="Santiago", state="CL")
+dojo3=Dojo.objects.create(name="Grass Dojo", city="Punta Arenas", state="CL")
+
+# Consulta: elimina los 3 dojos que acaba de crear
+Dojo.objects.all().delete()
+
+# Consulta: Crea 3 dojos más
+dojo4=Dojo.objects.create(name="Ice Dojo", city="Puerto Natales", state="CL")
+dojo5=Dojo.objects.create(name="Poison Dojo", city="Osorno", state="CL")
+dojo6=Dojo.objects.create(name="Steel Dojo", city="Arica", state="CL")
+
+# Consulta: crea 3 ninjas que pertenecen al primer dojo	
+ninja1d1=Ninja.objects.create(first_name="Pedro", last_name="Aguilar", dojo_id=dojo4)
+ninja2d1=Ninja.objects.create(first_name="Juan", last_name="Escobar", dojo_id=dojo4)
+ninja3d1=Ninja.objects.create(first_name="Peter", last_name="Romero", dojo_id=dojo4)
+
+# Consulta: crea 3 ninjas que pertenecen al segundo dojo
+ninja1d2=Ninja.objects.create(first_name="Juan", last_name="Perez", dojo_id=dojo5)
+ninja2d2=Ninja.objects.create(first_name="Marcos", last_name="Donoso", dojo_id=dojo5)
+ninja3d2=Ninja.objects.create(first_name="Jose", last_name="Alarcon", dojo_id=dojo5)
+
+# Consulta: crea 3 ninjas que pertenecen al tercer dojo	
+ninja1d2=Ninja.objects.create(first_name="Diego", last_name="Gonzalez", dojo_id=dojo6)
+ninja2d2=Ninja.objects.create(first_name="Pepe", last_name="Toño", dojo_id=dojo6)
+ninja3d2=Ninja.objects.create(first_name="Luis", last_name="Toro", dojo_id=dojo6)
+
+# Consulta: recupera todos los ninjas del primer dojo
+ninjas_first_dojo=Ninja.objects.filter(dojo_id=Dojo.objects.first().id)
+
+# Consulta: recupera todos los ninjas del último dojo	
+ninjas_last_dojo=Ninja.objects.filter(dojo_id=Dojo.objects.last().id)
+
+# Consulta: recupera el último dojo del ninja	
+last_dojo=Ninja.objects.last().dojo_id
+
+# Agrega un nuevo campo de texto llamado "desc" a su clase de Dojo	
+# Crea y ejecuta los archivos de migración para actualizar la tabla en su base de datos. Si es necesario, proporcione un valor predeterminado de "dojo antiguo"	
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+# Consulta: crear un nuevo dojo	
+newDojo=Dojo.objects.create(name="Dragon Dojo", city="Temuco", state="CL", desc="Nuevo dojo")
