@@ -1,0 +1,35 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block body %}
+<div class="container">
+  <br>
+  <div class="row">
+    <h3>{{book.title}}</h3>
+    <dl class="row">
+      <dt class="col-2">ID:</dt>
+      <dd class="col-10">{{book.id}}</dd>
+      <dt class="col-2">Description:</dt>
+      <dd class="col-10">{{book.desc}}</dd>
+      <dt>Authors:</dt>
+      <dd>
+        <ul>
+        {% for author in authors_list %}
+          <li>{{author.first_name}} {{author.last_name}}</li>
+        {% endfor %}
+        </ul>
+        <form action="add_author_relation" method="POST">
+        {% csrf_token %}
+          <select class="form-select-sm" name="author" required>
+            <option value="" selected>- select an author -</option>
+            {% for author in other_authors %}
+            <option value="{{book.id}}|{{author.id}}">{{author.first_name}} {{author.last_name}}</option>
+            {% endfor %}
+          </select>
+          <button type="submit" class="btn btn-success">Add</button>
+      </form
+      </dd>
+    </dl>
+  </div>
+</div>
+{% endblock %}

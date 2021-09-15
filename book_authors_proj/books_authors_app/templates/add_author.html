@@ -1,0 +1,51 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block body %}
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-4">
+      <h2 class="text-center">Add a Author</h2>
+      <form action="add_author" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="fname" class="control-label">First Name</label>
+          <input type="text" class="form-control" id="fname" name="fname">
+        </div>
+        <div class="mb-3">
+          <label for="lname" class="control-label">Last Name</label>
+          <input type="text" class="form-control" id="lname" name="lname">
+        </div>
+        <div class="mb-3">
+        <label for="desc" class="control-label">Notes</label>
+        <textarea id="desc"type="text" class="form-control" id="notes" row="4" name="notes"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Add</button>
+      </form>
+    </div>
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+      <table class="table table-success table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for author in authors_list%}
+          <tr>
+            <th scope="row">{{author.id}}</th>
+            <td>{{author.first_name}} {{author.last_name}}</td>
+            <td><a href="/authors/{{author.id}}">View</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

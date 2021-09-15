@@ -70,7 +70,7 @@ author=Author.objects.get(id=5)
 author.authors.add(Book.objects.get(id=2))
 
 # Consulta: Encuentra todos los libros de los que el tercer autor es parte	
-author=Author.objects.get(id=5)
+author=Author.objects.get(id=3)
 author.authors.all()
 
 # Consulta: Encuentra todos los autores que contribuyeron al quinto libro.	
