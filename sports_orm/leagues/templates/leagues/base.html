@@ -1,0 +1,73 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Sports Leagues</title>
+</head>
+<body>
+  <div class="w3-sidebar w3-bar-block" style="width:25%">
+    <a href="/" class="w3-bar-item w3-button">HOME</a>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">Level 1
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="w3-dropdown-content w3-bar-block">
+        <a href="/lv1/1" class="w3-bar-item w3-button">1. All baseball leagues</a>
+        <a href="/lv1/2" class="w3-bar-item w3-button">2. All womens' leagues</a>
+        <a href="/lv1/3" class="w3-bar-item w3-button">3. All leagues where sport is any type of hockey</a>
+        <a href="/lv1/4" class="w3-bar-item w3-button">4. All leagues where sport is something OTHER THAN football</a>
+        <a href="/lv1/5" class="w3-bar-item w3-button">5. All leagues that call themselves "conferences"</a>
+        <a href="/lv1/6" class="w3-bar-item w3-button">6. All leagues in the Atlantic region</a>
+        <a href="/lv1/7" class="w3-bar-item w3-button">7. All teams based in Dallas</a>
+        <a href="/lv1/8" class="w3-bar-item w3-button">8. All teams named the Raptors</a>
+        <a href="/lv1/9" class="w3-bar-item w3-button">9. All teams whose location includes "City"</a>
+        <a href="/lv1/10" class="w3-bar-item w3-button">10. All teams whose names begin with "T"</a>
+        <a href="/lv1/11" class="w3-bar-item w3-button">11. All teams, ordered alphabetically by location</a>
+        <a href="/lv1/12" class="w3-bar-item w3-button">12. all teams, ordered by team name in reverse alphabetical order</a>
+        <a href="/lv1/13" class="w3-bar-item w3-button">13. Every player with last name "Cooper"</a>
+        <a href="/lv1/14" class="w3-bar-item w3-button">14. Every player with first name "Joshua"</a>
+        <a href="/lv1/15" class="w3-bar-item w3-button">15. Every player with last name "Cooper" EXCEPT FOR Joshua</a>
+        <a href="/lv1/16" class="w3-bar-item w3-button">16. All players with first name "Alexander" OR first name "Wyatt"</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">Level 2
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="w3-dropdown-content w3-bar-block">
+        <a href="/lv2/1" class="w3-bar-item w3-button">1. All teams in the Atlantic Soccer Conference</a>
+        <a href="/lv2/2" class="w3-bar-item w3-button">2. All (current) players on the Boston Penguins</a>
+        <a href="/lv2/3" class="w3-bar-item w3-button">3. All (current) players in the International Collegiate Baseball Conference</a>
+        <a href="/lv2/4" class="w3-bar-item w3-button">4. All (current) players in the American Conference of Amateur Football with last name "Lopez"</a>
+        <a href="/lv2/5" class="w3-bar-item w3-button">5. All football players</a>
+        <a href="/lv2/6" class="w3-bar-item w3-button">6. All teams with a (current) player named "Sophia"</a>
+        <a href="/lv2/7" class="w3-bar-item w3-button">7. All leagues with a (current) player named "Sophia"</a>
+        <a href="/lv2/8" class="w3-bar-item w3-button">8. Everyone with the last name "Flores" who DOESN'T (currently) play for the Washington Roughriders</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">Level 3
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="w3-dropdown-content w3-bar-block">
+        <a href="/lv3/1" class="w3-bar-item w3-button">1. All teams, past and present, that Samuel Evans has played with</a>
+        <a href="/lv3/2" class="w3-bar-item w3-button">2. All players, past and present, with the Manitoba Tiger-Cats</a>
+        <a href="/lv3/3" class="w3-bar-item w3-button">3. All players who were formerly (but aren't currently) with the Wichita Vikings</a>
+        <a href="/lv3/4" class="w3-bar-item w3-button">4. Every team that Jacob Gray played for before he joined the Oregon Colts</a>
+        <a href="/lv3/5" class="w3-bar-item w3-button">5. Everyone named "Joshua" who has ever played in the Atlantic Federation of Amateur Baseball Players</a>
+        <a href="/lv3/6" class="w3-bar-item w3-button">6. All teams that have had 12 or more players, past and present</a>
+        <a href="/lv3/7" class="w3-bar-item w3-button">7. All players, sorted by the number of teams they've played for</a>
+      </div>
+    </div> 
+  </div>
+  <div style="margin-left:25%">
+    {% block body %}
+    {% endblock %}
+  </div> 
+</body>
+</html>
