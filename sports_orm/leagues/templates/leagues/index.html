@@ -34,11 +34,15 @@
 					<li>{{item.name}}</li>
 				{% elif t == 'team' %}
 					<li>{{item.location}} {{item.team_name}}</li>
-				{% else %}
-					<li>{{item.first_name}} {{item.last_name}}</li>
+				{% elif t == "player" %}
+					{% if not esp%}
+						<li>{{item.first_name}} {{item.last_name}}</li>
+					{%else %}
+						<li>{{item.first_name}} {{item.last_name}} | total teams: {{item.teams_count}} </li> 
+					{%endif %}
 				{% endif %}
 			{% empty %}
-				<p>No leagues found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+				<p>Consulta no valida</p>
 			{% endfor %}
 		</ol>
 	{% endif %}
